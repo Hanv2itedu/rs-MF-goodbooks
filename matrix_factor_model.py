@@ -191,25 +191,25 @@ if __name__ == '__main__':
     resultCheck = []
     ids = []
     modelA = ProductRecommender()
-    data = [[1, 2, 3], [0, 2, 3],[0, 7, 3],[5, 7, 3]]
+    # data = [[1, 2, 3], [0, 2, 3],[0, 7, 3],[5, 7, 3]]
     ratings = pd.read_csv('ratingmatrixfix.csv', sep=',', error_bad_lines=False, encoding="latin-1")
     ratings = ratings.drop(['userID'], axis=1)
     print(ratings.shape)
     ratings = ratings.values
     print(ratings)
-
+    #dua dataframe vao fit
     modelA.fit(ratings)
     result = modelA.predict_instance(1)
 
     print(type(result))
     len = len(result)
     for i in result:
-        print("i:",i)
+        # print("i:",i)
         getResult.append(i)
-    print(getResult)
-    print(type(getResult))
+    # print(getResult)
+    # print(type(getResult))
     resultCheck = getResult.copy()
-    print("resulcheck:",resultCheck)
+    # print("resulcheck:",resultCheck)
     getResult.sort(reverse=True)
     for i in range(5):
         for a in resultCheck:
