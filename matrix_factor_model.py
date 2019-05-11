@@ -190,6 +190,7 @@ if __name__ == '__main__':
     getResult =[]
     resultCheck = []
     ids = []
+    userID = 1
     modelA = ProductRecommender()
     # data = [[1, 2, 3], [0, 2, 3],[0, 7, 3],[5, 7, 3]]
     ratings = pd.read_csv('ratingmatrixfix.csv', sep=',', error_bad_lines=False, encoding="latin-1")
@@ -199,7 +200,7 @@ if __name__ == '__main__':
     print(ratings)
     #dua dataframe vao fit
     modelA.fit(ratings)
-    result = modelA.predict_instance(1)
+    result = modelA.predict_instance(userID)
 
     print(type(result))
     len = len(result)
